@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "student";
+$dbname = "club";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,16 +12,15 @@ if ($conn->connect_error) {
 } 
 
 // sql to create table
-$sql = "CREATE TABLE module5 (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-firstname VARCHAR(30) NOT NULL,
-lastname VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-reg_date TIMESTAMP
+$sql = "CREATE TABLE members (
+Id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+Name VARCHAR(30) NOT NULL,
+Place VARCHAR(20) NOT NULL,
+Gender VARCHAR(10)
 )";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Table MyGuests created successfully";
+    echo "Table Club created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }
